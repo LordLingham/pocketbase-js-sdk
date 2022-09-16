@@ -143,7 +143,7 @@ export default abstract class BaseAuthStore {
      *
      * Returns a removal function that you could call to "unsubscribe" from the changes.
      */
-    onChange(callback: () => void): () => void {
+    onChange(callback: (token: string, model: User|Admin|null) => void): () => void {
         this._onChangeCallbacks.push(callback);
 
         return () => {
